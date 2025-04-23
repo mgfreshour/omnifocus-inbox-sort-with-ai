@@ -3,7 +3,7 @@ import { TaskProcessor } from './taskProcessor.js';
 import { OpenRouterService } from './openrouter.js';
 import { log, debug, error, warn } from './utils/logger.js';
 
-const myaction = new PlugIn.Action(async function tagSortInbox() {
+const myaction = new PlugIn.Action(async function InboxSortViaAI() {
     debug('Starting tagSortInbox action');
     try {
 
