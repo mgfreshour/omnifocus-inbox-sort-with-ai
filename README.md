@@ -17,7 +17,7 @@ A smart, semi-automated OmniFocus inbox triage system that uses OpenAI to intell
 ### Prerequisites
 
 - macOS
-- OmniFocus 3
+- OmniFocus 4
 - Alfred (optional, for keyboard-driven access)
 - OpenRouter API key
 
@@ -34,13 +34,13 @@ The OpenRouter API key is required for the AI-powered categorization feature to 
 
 ### Installation
 
-1. Download the latest release
-2. Double-click the `.omnifocusjs` bundle to install
-3. Configure your OpenAI API key in the plugin settings
+1. Download the latest release (when I eventually make a release workflow in github, until then, clone this and run "npm run build")
+3. Double-click the `InboxSortViaAI.omnifocusjs` bundle to install
+4. Configure your OpenAI API key in the plugin settings
 
 ### Plugin Settings
 
-The plugin settings are accessed through a form that appears when you run the plugin. To configure the plugin:
+The plugin settings are accessed through a form that appears when you run the plugin or when you Ctrl click the automation. To configure the plugin:
 
 1. Run the plugin using one of the methods described in the Weekly Review Workflow section
 2. A settings form will appear where you can configure. You can get this on other runs by ctrl clicking:
@@ -85,9 +85,7 @@ The plugin is designed to be part of your weekly review process. Here's how to s
 
 OmniFocus plugins can be run via a custom URL scheme. Use this format:
 
-omnifocus://localhost/plug-in-action?name=tagSortInbox&plugIn=InboxSortViaAI.omnifocusjs
-
-Replace InboxSortViaAI.omnifocusjs with the name of your plugin bundle if you renamed it.
+omnifocus://localhost/plug-in-action?name=InboxSortViaAI&plugIn=InboxSortViaAI.omnifocusjs
 
 	•	Paste this URL into the Note field of the task.
 
@@ -100,11 +98,9 @@ Each week when the task comes due:
 
 ⸻
 
-🚀 Pro Tip (macOS only)
+🚀 Pro Tip
 
 If you use an automation tool like Keyboard Maestro, Shortcuts, or Raycast, you can bind that plugin URL to a hotkey or automation to launch it even faster.
-
-Let me know if you'd like to integrate with a launcher like that!Absolutely, yes! You can bind the OmniFocus plugin to a custom Alfred workflow, so you can trigger your weekly inbox triage with a simple keyword or hotkey.
 
 Here's how to do it:
 
@@ -143,9 +139,7 @@ Set:
 	•	Language: /bin/bash
 	•	Script:
 
-open "omnifocus://localhost/plug-in-action?name=tagSortInbox&plugIn=InboxSortViaAI.omnifocusjs"
-
-Update the plugIn parameter if you renamed your plugin.
+open "omnifocus://localhost/plug-in-action?name=InboxSortViaAI&plugIn=InboxSortViaAI.omnifocusjs"
 
 Connect the Keyword/Hotkey node to the Run Script node.
 
@@ -163,13 +157,6 @@ Connect the Keyword/Hotkey node to the Run Script node.
 If you're using Alfred Powerpack, you can even show task status or AppleScript-driven feedback inside Alfred. Want to do that? I can give you a version that:
 	•	Verifies OmniFocus is open
 	•	Displays a notification or Alfred dialog once triage is complete
-
-Just say the word!Awesome — here's how to level up your Alfred workflow to:
-	1.	✅ Check that OmniFocus is running
-	2.	🚀 Open your plugin
-	3.	🧾 Show a notification or Alfred dialog when done
-
-⸻
 
 🔧 Enhanced Alfred Workflow Script
 
@@ -189,14 +176,11 @@ tell application "System Events"
 end tell
 
 -- Open the plugin via URL
-do shell script "open 'omnifocus://localhost/plug-in-action?name=tagSortInbox&plugIn=InboxSortViaAI.omnifocusjs'"
+do shell script "open 'omnifocus://localhost/plug-in-action?name=InboxSortViaAI&plugIn=InboxSortViaAI.omnifocusjs'"
 
 -- Optional: Notify user
 display notification "AI Inbox triage started in OmniFocus." with title "Triage Plugin"
 
-
-
-⸻
 
 💡 Optional: Add Feedback in Alfred
 
@@ -213,113 +197,11 @@ or
 Right-click → Outputs → Large Type
 	•	Message: Triage plugin launched! 🎯
 
-⸻
-
-✅ Recap: What You Get
-
 Now when you run the Alfred keyword:
 	•	OmniFocus launches if it's not running
 	•	Your plugin starts automatically
 	•	You see a notification that it worked
 
-⸻
-
-Want even more power? I can help you:
-	•	📆 Schedule this as a recurring background check
-	•	📥 Add task summaries to the notification
-	•	🤝 Integrate Alfred with Raycast or Shortcuts
-
-Just let me know how far you want to take it!
-
-## 🛠 Development
-
-### TypeScript Best Practices
-
-- Use TypeScript strict mode
-- Prefer explicit types over implicit ones
-- Use interfaces for object shapes
-- Use type aliases for complex types
-- Avoid `any` type unless absolutely necessary
-- Use readonly properties for immutable data
-- Use private/protected modifiers appropriately
-- Use async/await for asynchronous operations
-- Handle errors appropriately with try/catch
-
-### OmniFocus Plugin Guidelines
-
-- Keep plugin size minimal
-- Use efficient data structures
-- Handle OmniFocus API errors gracefully
-- Validate input data
-- Use appropriate file paths for OmniFocus
-- Follow OmniFocus plugin naming conventions
-- Document plugin requirements and dependencies
-- Test with different OmniFocus versions
-
-### Testing
-
-- Write unit tests for core functionality
-- Test edge cases and error conditions
-- Mock OmniFocus API calls
-- Test file system operations
-- Validate output formats
-- Test with different project structures
-
-### Error Handling
-
-- Provide meaningful error messages
-- Log errors appropriately
-- Handle file system errors
-- Validate user input
-- Use appropriate error types
-- Implement graceful fallbacks
-
-### Performance
-
-- Minimize file system operations
-- Use efficient algorithms
-- Cache results when appropriate
-- Avoid unnecessary computations
-- Optimize memory usage
-- Profile performance regularly
-
-### Security
-
-- Validate file paths
-- Sanitize user input
-- Handle sensitive data appropriately
-- Follow security best practices
-- Use secure file operations
-- Implement proper access controls
-
-## 📝 Documentation
-
-- Document plugin purpose and usage
-- Explain configuration options
-- Provide examples
-- Document known limitations
-- Keep documentation up to date
-- Include troubleshooting guide
-
-## 🔄 Version Control
-
-- Use meaningful commit messages
-- Follow semantic versioning
-- Document breaking changes
-- Keep changelog up to date
-- Tag releases appropriately
-- Maintain backward compatibility
-
-## 🏗 Build Process
-
-- Automate build process
-- Validate build output
-- Test build artifacts
-- Document build requirements
-- Handle build errors gracefully
-- Optimize build performance
-
-## 🤝 Contributing
 
 Contributions are welcome! Please read our contributing guidelines before submitting pull requests.
 
