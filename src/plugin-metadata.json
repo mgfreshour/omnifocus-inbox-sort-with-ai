@@ -1,0 +1,14 @@
+{
+    "type": "action",
+    "targets": [
+        "omnifocus"
+    ],
+    "author": "M Freshour",
+    "identifier": "com.mfreshour.omnifocus.inbox-sort-via-ai",
+    "version": "1.0.0",
+    "description": "AI-Powered Task Sorting: Automatically sorts tasks in the OmniFocus Inbox into appropriate projects or tags using AI.",
+    "label": "Sort Inbox via AI (Ctrl Click for options)",
+    "shortLabel": "Sort Inbox",
+    "paletteLabel": "Sort Inbox via AI",
+    "image": "arrow.triangle.branch"
+}

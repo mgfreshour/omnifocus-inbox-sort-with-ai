@@ -1,0 +1,114 @@
+# Inbox Sorting with AI
+
+## Project Description
+This project is a smart, semi-automated OmniFocus inbox triage system that uses OpenAI to intelligently categorize tasks, integrated with Alfred for fast, keyboard-driven access. Here’s a polished description you could use for documentation, a README, or even a blog post:
+
+⸻
+
+🧠 OmniFocus AI Triage Assistant
+
+This project is a custom OmniFocus plugin + Alfred workflow that streamlines your weekly task review using artificial intelligence and automation:
+
+✨ Key Features
+	•	AI-Powered Categorization: Automatically sorts tasks in the OmniFocus Inbox into appropriate projects based on task title and description using OpenAI.
+	•	Manual Review Mode: Lets you approve or override AI-suggested projects before applying them.
+	•	Auto-Accept Rules: Define regex-based rules for when to silently accept AI recommendations.
+	•	YouTube Enrichment: Detects YouTube-only tasks, fetches the video title & description, and replaces the task note with that info before moving to project.
+	•	“Unknown” Bucket: Catches anything the AI can’t confidently categorize so nothing falls through the cracks.
+	•	macOS Keychain Integration: Securely stores and retrieves your OpenAI API key.
+	•	Alfred Workflow: Instantly launch the plugin via Alfred using a hotkey or keyword, complete with visual feedback.
+	•	OmniFocus-Aware: Automatically opens OmniFocus if it isn’t running, so the plugin can do its job.
+
+🔄 Designed for Weekly Reviews
+	•	Pairs perfectly with a repeating task in OmniFocus or a scheduled Alfred trigger.
+	•	Encourages regular review and cleanup without the friction of manual sorting.
+
+
+# Javascript and OmniFocus Plugin Best Practices
+
+## Code Style
+- Prefer explicit types over implicit ones
+- Use interfaces for object shapes
+- Use type aliases for complex types
+- Avoid `any` type unless absolutely necessary
+- Use readonly properties for immutable data
+- Use private/protected modifiers appropriately
+- Use async/await for asynchronous operations
+- Handle errors appropriately with try/catch
+
+## Comments
+- Comments should explain WHY, not WHAT
+- Remove comments that just describe the code
+- Use JSDoc comments for public APIs
+- Document complex business logic
+- Explain non-obvious decisions
+- Remove commented-out code
+- Use TODO comments for future improvements
+
+## OmniFocus Plugin Specific
+- The only external libraries that can be used are the ones provided by Omnifocus, documented in "docs/omnifocus-api"
+- All source files will be compiled into a single .omnifocusjs file.
+- Keep plugin size minimal
+- Use efficient data structures
+- Handle OmniFocus API errors gracefully
+- Validate input data
+- Use appropriate file paths for OmniFocus
+- Follow OmniFocus plugin naming conventions
+- Document plugin requirements and dependencies
+- Test with different OmniFocus versions
+
+## Testing
+- Write unit tests for core functionality
+- Test edge cases and error conditions
+- Mock OmniFocus API calls
+- Test file system operations
+- Validate output formats
+- Test with different project structures
+
+## Error Handling
+- Provide meaningful error messages
+- Log errors appropriately
+- Handle file system errors
+- Validate user input
+- Use appropriate error types
+- Implement graceful fallbacks
+
+## Performance
+- Minimize file system operations
+- Use efficient algorithms
+- Cache results when appropriate
+- Avoid unnecessary computations
+- Optimize memory usage
+- Profile performance regularly
+
+## Security
+- Validate file paths
+- Sanitize user input
+- Handle sensitive data appropriately
+- Follow security best practices
+- Use secure file operations
+- Implement proper access controls
+
+## Documentation
+- Document plugin purpose and usage
+- Explain configuration options
+- Provide examples
+- Document known limitations
+- Keep documentation up to date
+- Include troubleshooting guide
+
+## Version Control
+- Use meaningful commit messages
+- Follow semantic versioning
+- Document breaking changes
+- Keep changelog up to date
+- Tag releases appropriately
+- Maintain backward compatibility
+
+## Build Process
+- Automate build process
+- Validate build output
+- Test build artifacts
+- Document build requirements
+- Handle build errors gracefully
+- Optimize build performance 
